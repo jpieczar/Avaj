@@ -2,7 +2,7 @@ package simulator.aircraft;
 
 // Only subclasses can access the protected attributes.
 
-public class Aircraft {
+public abstract class Aircraft {
 	protected long id;
 	protected String name;
 	protected Coordinates coordinates;

@@ -29,11 +29,22 @@ public class Reader {
 		while (scnr.hasNextLine()) {
 			line = scnr.nextLine();
 			String[] maker = line.split(" ");
-			int lonI = Integer.parseInt(maker[2]);
-			int latI = Integer.parseInt(maker[3]);
-			int heiG = Integer.parseInt(maker[4]);
-			Flyable flyableThing = AircraftFactory.newAircraft(maker[0], maker[1], lonI, latI, heiG);
+			if (maker.length != 5) {
+				System.out.println("Invalid input!");
+				return 0;
+			}
+			try {
+				int lonI = Integer.parseInt(maker[2]);
+				int latI = Integer.parseInt(maker[3]);
+				int heiG = Integer.parseInt(maker[4]);
+Flyable flyableThing = AircraftFactory.newAircraft(maker[0], maker[1], lonI, latI, heiG);
 			flyableThing.registerTower(weatherTower);
+
+			}
+			catch (Exception e)
+			{System.out.println("Eat pant!");}
+			//Flyable flyableThing = AircraftFactory.newAircraft(maker[0], maker[1], lonI, latI, heiG);
+			//flyableThing.registerTower(weatherTower);
 		}
 	return simRun;
 	}

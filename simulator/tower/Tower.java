@@ -5,7 +5,7 @@ import java.util.List;
 
 import simulator.interfaces.Flyable;
 
-public class Tower {
+public abstract class Tower {
 	private List<Flyable> observers = new ArrayList<>();
 
 	public void register(Flyable flyable) {
